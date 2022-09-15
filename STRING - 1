@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <string.h>
+
+int main (){
+
+char a[100], b[100];
+int i = 0, conta = 0, contb = 0, n = 0;
+
+printf("Primeiro nome: \n");
+scanf("%s",a);
+printf("Segundo nome: \n");
+scanf("%s",b);
+
+//ITEM A
+printf("\nQuantidade de letras de %s:\n",a);
+printf("%i\n",strlen(a));
+printf("\nQuantidade de letras de %s:\n",b);
+printf("%i\n",strlen(b));
+
+// ITEM B
+if (strcmp (a,b)== 0)
+{
+    printf("\nOs nomes sao IGUAIS!\n");
+}else{
+    printf("\nOs nomes sao DIFERENTES!\n");
+}
+
+//ITEM C
+for ( i = 0; i < 10; i++)
+{
+    if ( a[i]== 'a' || a[i]== 'e' || a[i]== 'i' || a[i]== 'o' || a[i]== 'u')
+    {
+       conta++;
+    }
+
+}
+for ( i = 0; i < 10; i++)
+{
+    if ( b[i]== 'a' || b[i]== 'e' || b[i]== 'i' || b[i]== 'o' || b[i]== 'u')
+    {
+       contb++;
+    }
+
+}
+
+printf("\nQuantidade de vogais em %s:\n",a);
+printf("%i\n", conta);
+
+printf("\nQuantidade de vogais em %s:\n",b);
+printf("%i\n", contb);
+
+// ITEM D
+printf("\nNome %s inverso: \n",b);
+n = strlen(b);
+for ( i = n; i >= 0; i--)
+{
+    printf("%c", b[i]);
+}
+printf("\n");
+
+// ITEM E
+fflush(stdin);
+int vc = strlen(a)+strlen(b);
+char c[21];
+printf("Os nomes concatenados:\n");
+strcat(c,a);
+strcat(c,b);
+printf("%s\n",c);
+
+// ITEM F
+
+
+
+
+    return 0;
+}
