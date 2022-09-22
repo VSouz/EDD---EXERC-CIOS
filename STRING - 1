@@ -3,8 +3,8 @@
 
 int main (){
 
-char a[100], b[100];
-int i = 0, conta = 0, contb = 0, n = 0;
+char a[100], b[100], d[21], aux;
+int i = 0,j=0, conta = 0, contb = 0, n = 0, contd = 0;
 
 printf("Primeiro nome: \n");
 scanf("%s",a);
@@ -61,16 +61,29 @@ printf("\n");
 // ITEM E
 fflush(stdin);
 int vc = strlen(a)+strlen(b);
-char c[21];
-printf("Os nomes concatenados:\n");
+char c[100];
+printf("\n Os nomes concatenados:\n");
 strcat(c,a);
 strcat(c,b);
 printf("%s\n",c);
 
 // ITEM F
+printf("\nO nome sem caracteres repetidos: \n");
 
-
-
-
+for ( i = 0; i < vc; i++)
+{
+    for ( j = 0; j < vc; j++)
+    {
+    if (c[i] == c[j])
+        {
+            contd ++;
+        }   
+    }
+    if (contd == 1)
+            {
+               printf("%c", c[i]); 
+            }
+    contd = 0;
+}
     return 0;
 }
